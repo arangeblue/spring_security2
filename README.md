@@ -1,48 +1,106 @@
-# spring security study
+<h1 align="center">Welcome to springboot security and JWT 👋</h1>
+<p>
+  <a href="https://www.npmjs.com/package/springboot security" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/springboot security.svg">
+  </a>
+  <a href="https://github.com/kyubokWi/spring_security2" target="_blank">
+    <img alt="License: orangeblue" src="https://img.shields.io/badge/License-orangeblue-yellow.svg" />
+  </a>
+</p>
 
-- 스프링의 시큐리티 라이브러리를 사용하면 인증 권한과 관련한 많은 서비스를 제공받을 수 있다.
-- 실무에서는 이를 그대로 사용할 수 없으며 custom을 하여 더 세부적인 설정을 한 후 사용할 수 있다.
-- 이 때 WebSecurityConfigurerAdapter를 상속받아서 나만의 custom security config 를 만들면 된다.
-- 기본적으로 user라는 name을 가지고 spring security에서 제공하는 랜덤 password를 가지고 로그인을 하면 된다.
-- 더 나아가 db에 사용자와 관리자를 등록해서 이들을 인증하는 것까지 해볼 것..
-  
+
+> 스프링부트 Security와 JWT 공부
 
 
-- password를 해줄 때 encode를 해주어야 한다.
-- roles에 따른 권한을 만들어주어야 한다.
-- @PreAuthorize()를 이용해서 antMatchers처럼 행동할 수 있다.
-- 
+<br>
+
+## Todo
+- description
+
+<br>
+
+## Author
+
+👤 **WIKYUBOK**
+
+* Website: https://github.com/kyubokWi/
+* Github: [@kyubokwi](https://github.com/kyubokwi)
+* Reference: [@Amigoscode](https://www.youtube.com/channel/UC2KfmYEM4KCuA1ZurravgYw) spring security full version lecture
+
+<br>
+<br>
+
+## Setting and dependencies 
+
+<br>
+
+
+### Setting
+
+- vscode latest
+- maven
+- java 11 -v
+- springboot 2.5.5 -v
+
+<br>
+
+### dependencies
+
+- spring security
+- thymeleaf
+- spring web
+- spring devtools
+- lombok
+- google guava 28.1-jre -v
+- spring boot configuration processor
+- jwt 0.11.2 -v
+  - jjwt-api
+  - jjwt-impl
+  - jjwt-jackson
+
+
+<br>
+<br>
 
 
 ## JWT (Json Web Token)
 
-Plus
+<br>
+
+##### Pros
 - faster
 - stateless
 - used across many services (android, ios, web, 3rd party... )
 
-Minus
+##### Cons
 - Compromised secret key
 - no visibility to logged in users
 - token can be stolen
 
-Works
-- client -> server (sends credentials)
+##### Works
+- client -> server ( sends credentials )
 - server validates credential and creates and signs token
-- server -> client (sends token)
+- server -> client ( sends token)
 - client -> server ( every request with given token )
   - any request send to server included token
   - this time, filter as JwtUsernameAndPasswordAuthenticationFilter works 
-- server (validates given token) 
+- server ( validates given token ) 
   - JwtTokenVelifier filter works
 
+<br>
 
-factor transformed by specific algorithm such as HS256
-- encoded header 
-- encoded payload
-- encoded my secret signature
+##### Factor transformed by specific algorithm such as HS256
+- encoded header ( ALGORITHM & TOKEN TYPE )
+- encoded payload ( DATA )
+- encoded my secret signature ( VERIFY SIGNATURE )
 
-Install - apply dependencies
-- https://github.com/jwtk/jjwt
-  - maven
-  - gradle
+
+
+
+## 📝 License
+
+Copyright © 2021 [@Orangeblue](https://github.com/kyubokwi).<br />
+
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
