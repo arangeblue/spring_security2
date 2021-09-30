@@ -8,14 +8,41 @@
   
 
 
-- **password를 해줄 때 encode를 해주어야 한다.**
-
-
+- password를 해줄 때 encode를 해주어야 한다.
 - roles에 따른 권한을 만들어주어야 한다.
 - @PreAuthorize()를 이용해서 antMatchers처럼 행동할 수 있다.
-
-## permission
-
+- 
 
 
+## JWT (Json Web Token)
 
+Plus
+- faster
+- stateless
+- used across many services (android, ios, web, 3rd party... )
+
+Minus
+- Compromised secret key
+- no visibility to logged in users
+- token can be stolen
+
+Works
+- client -> server (sends credentials)
+- server validates credential and creates and signs token
+- server -> client (sends token)
+- client -> server ( every request with given token )
+  - any request send to server included token
+  - this time, filter as JwtUsernameAndPasswordAuthenticationFilter works 
+- server (validates given token) 
+  - JwtTokenVelifier filter works
+
+
+factor transformed by specific algorithm such as HS256
+- encoded header 
+- encoded payload
+- encoded my secret signature
+
+Install - apply dependencies
+- https://github.com/jwtk/jjwt
+  - maven
+  - gradle

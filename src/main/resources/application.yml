@@ -2,3 +2,8 @@ spring:
     thymeleaf:
         prefix : classpath:templates/
         suffix : .html
+
+# @ConfigurationProperty
+application.jwt.secretKey: "secretsecretsecretsecretsecretsecretsecretsecretsecret"
+application.jwt.tokenPrefix: "Bearer "
+application.jwt.tokenExpirationAfterDays: 1
